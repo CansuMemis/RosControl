@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<robot name="myfirst">
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+
+
+
+  <link name="base_link">
+     <visual>
+        <geometry>
+          <cylinder length="0.05" radius="0.6"/>
+        </geometry>
+        <material name="red"/>
+     </visual>
+  </link>
+
+  <link name="right_leg1">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.3"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg1" type="fixed">
+     <parent link="base_link"/>
+     <child link="right_leg1"/>
+     <origin rpy="0 2 0" xyz="0.3 0.18 0.45"/>
+  </joint>
+
+  <link name="right_leg1_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.9" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.15"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg1_1" type="fixed">
+     <parent link="right_leg1"/>
+     <child link="right_leg1_1"/>
+     <origin rpy="0 2 0" xyz="-0.3 0 0.75 "/>
+  </joint>
+
+  <link name="right_leg_whell_1_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.1" radius="0.03"/>
+      </geometry>
+      <origin  xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_legwhell_1_1" type="fixed">
+     <parent link="right_leg1_1"/>
+     <child link="right_leg_whell_1_1"/>
+     <origin rpy="0 0.72 0 " xyz="-0.425 0.2 0.17 "/>
+  </joint>
+
+  <link name="right_leg2">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 -0.2 0.4"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg2" type="fixed">
+     <parent link="base_link"/>
+     <child link="right_leg2"/>
+     <origin rpy="0 2 0" xyz="0.3 0.18 0.45"/>
+  </joint>
+
+  <link name="right_leg2_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.9" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.15"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg2_1" type="fixed">
+     <parent link="right_leg2"/>
+     <child link="right_leg2_1"/>
+     <origin rpy="0 2 0" xyz="-0.3 -0.4 0.85 "/>
+  </joint>
+
+  <link name="right_leg_whell_2_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.1" radius="0.03"/>
+      </geometry>
+      <origin  xyz="0 0 0"/>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_legwhell_2_1" type="fixed">
+     <parent link="right_leg2_1"/>
+     <child link="right_leg_whell_2_1"/>
+     <origin rpy="0 0.72 0 " xyz="-0.425 0.2 0.17 "/>
+  </joint>
+
+  <link name="right_leg3">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 -0.45 0.3"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg3" type="fixed">
+     <parent link="base_link"/>
+     <child link="right_leg3"/>
+     <origin rpy="0 2 0" xyz="0.3 0.1 0.45"/>
+  </joint>
+
+  <link name="right_leg3_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.9" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.15"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg3_1" type="fixed">
+     <parent link="right_leg3"/>
+     <child link="right_leg3_1"/>
+     <origin rpy="0 2 0" xyz="-0.3 -0.65 0.75 "/>
+  </joint>
+
+  <link name="right_leg_whell_3_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.1" radius="0.03"/>
+      </geometry>
+      <origin  xyz="0 0 0"/>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_legwhell_3_1" type="fixed">
+     <parent link="right_leg3_1"/>
+     <child link="right_leg_whell_3_1"/>
+     <origin rpy="0 0.72 0 " xyz="-0.425 0.2 0.17 "/>
+  </joint>
+
+  <link name="left_leg1">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.3"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg1" type="fixed">
+     <parent link="base_link"/>
+     <child link="left_leg1"/>
+     <origin rpy="0 -2 0" xyz="-0.3 0.18 0.45"/>
+  </joint>
+<link name="left_leg1_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.9" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.15"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg1_1" type="fixed">
+     <parent link="left_leg1"/>
+     <child link="left_leg1_1"/>
+     <origin rpy="0 -2 0" xyz="0.3 0 0.75 "/>
+  </joint>
+
+
+
+
+  <link name="left_leg_whell_1_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.1" radius="0.03"/>
+      </geometry>
+      <origin  xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_legwhell_1_1" type="fixed">
+     <parent link="left_leg1_1"/>
+     <child link="left_leg_whell_1_1"/>
+     <origin rpy="0 -0.72 0 " xyz="0.435 0.2 0.15 "/>
+  </joint>
+
+ <link name="left_leg2">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 -0.2 0.4"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg2" type="fixed">
+     <parent link="base_link"/>
+     <child link="left_leg2"/>
+     <origin rpy="0 -2 0" xyz="-0.3 0.18 0.45"/>
+  </joint>
+
+  <link name="left_leg2_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.9" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.15"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg2_1" type="fixed">
+     <parent link="left_leg2"/>
+     <child link="left_leg2_1"/>
+     <origin rpy="0 -2 0" xyz="0.3 -0.4 0.85 "/>
+  </joint>
+
+
+  <link name="left_leg_whell_2_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.1" radius="0.03"/>
+      </geometry>
+      <origin  xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_legwhell_2_1" type="fixed">
+     <parent link="left_leg2_1"/>
+     <child link="left_leg_whell_2_1"/>
+     <origin rpy="0 -0.72 0 " xyz="0.425 0.2 0.165 "/>
+  </joint>
+
+
+  <link name="left_leg3">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 -0.45 0.3"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg3" type="fixed">
+     <parent link="base_link"/>
+     <child link="left_leg3"/>
+     <origin rpy="0 -2 0" xyz="-0.3 0.1 0.45"/>
+  </joint>
+
+  <link name="left_leg3_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.9" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.15"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg3_1" type="fixed">
+     <parent link="left_leg3"/>
+     <child link="left_leg3_1"/>
+     <origin rpy="0 -2 0" xyz="0.3 -0.65 0.75 "/>
+  </joint>
+
+  <link name="left_leg_whell_3_1">
+    <visual>
+      <geometry>
+         <cylinder length="0.1" radius="0.03"/>
+      </geometry>
+      <origin  xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_legwhell_3_1" type="fixed">
+     <parent link="left_leg3_1"/>
+     <child link="left_leg_whell_3_1"/>
+     <origin rpy="0 -0.72 0 " xyz="0.425 0.2 0.165 "/>
+  </joint>
+
+
+
+
+  <link name="head">
+    <visual>
+      <geometry>
+         <sphere radius="0.15"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="head_swivel" type="fixed">
+     <parent link="base_link"/>
+     <child link="head"/>
+     <origin xyz="0 0.5 0.15 "/>
+  </joint>
+
+
+
+</robot>
+

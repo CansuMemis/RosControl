@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot name="myfirst">
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+
+  <link name="base_link">
+     <visual>
+        <geometry>
+          <cylinder length="0.05" radius="0.6"/>
+        </geometry>
+        <material name="red"/>
+     </visual>
+  </link>
+
+  <link name="right_leg1">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.3"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_rigth_leg1" type="fixed">
+     <parent link="base_link"/>
+     <child link="right_leg1"/>
+     <origin rpy="0 2 0" xyz="0.3 0.18 0.45"/>
+  </joint>
+
+
+  <link name="left_leg1">
+    <visual>
+      <geometry>
+         <cylinder length="0.7" radius="0.03"/>
+      </geometry>
+      <origin rpy="0 1.5787 0" xyz="0 0.2 0.3"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_leg1" type="fixed">
+     <parent link="base_link"/>
+     <child link="left_leg1"/>
+     <origin rpy="0 -2 0" xyz="-0.3 0.18 0.45"/>
+  </joint>
+</robot>
+

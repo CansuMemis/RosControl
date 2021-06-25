@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="cansu" default="$(find models)/urdf/sekil8.urdf"/>
+  <arg name="rvizconfig" default="$(find models)/rviz/urdf.rviz"/>
+  
+  <include file="$(find models)/launch/gazebo.launch">
+    <arg name="cansu" value="$(arg cansu)"/>
+  </include>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)"/>
+  
+  <rosparam command="load"
+            file="$(find models)/config/joints.yaml"
+            ns="spider_joint_state_controller"/>
+  
+  <rosparam command="load"
+            file="$(find models)/config/head.yaml"
+            ns="spider_head_controller"/>
+  
+  
+  <rosparam command="load"
+            file="$(find models)/config/diffdrive.yaml"
+            ns="spider_diff_drive_controller"/>
+
+
+  <node name="spider_controller_spawner" pkg="controller_manager" type="spawner"
+        args="spider_joint_state_controller
+              spider_head_controller
+              spider_diff_drive_controller
+              --shutdown-timeout 3"/>
+              
+  <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+    <param name="default_topic" value="/spider_diff_drive_controller/cmd_vel"/>
+  </node>
+</launch>
